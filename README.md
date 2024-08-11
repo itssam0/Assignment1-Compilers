@@ -1,3 +1,7 @@
+Esta es la implementación dada a la Asignación 1 del curso de Lenguajes Formales y Compiladores por parte de los alumnos Samuel Acosta Aristizabal y Katherin Nathalia Allin Murillo.
+
+A continuación podemos ver el contenido de la asignación y sus referencias
+
 # Formal Languages and Compilers
 #### Assignment 1
 
@@ -58,3 +62,5 @@ single line separated by blank spaces.
 ## References
 Kozen, Dexter C. (1997). Automata and Computability. 1st. Berlin, Heidelberg: Springer-Verlag.
 ISBN: 0387949070. DOI: https://doi.org/10.1007/978-1-4612-1844-9.
+
+En este Readme vamos a hacer un desglose de lo que hace el código y cómo se ejecuta este:
