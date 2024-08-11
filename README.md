@@ -66,7 +66,7 @@ ISBN: 0387949070. DOI: https://doi.org/10.1007/978-1-4612-1844-9.
 En este Readme vamos a explicar lo que hace el código y cómo se ejecuta este:
 Este es un script de Python que minimiza un autómata finito determinista (DFA) al encontrar estados equivalentes. En este README vamos a hacer un desglose de lo que hace el código y cómo se ejecuta este:
 
-## read_input() function:
+### read_input() function:
 
 1.	Lee la entrada estándar (generalmente la consola) línea por línea.
 
@@ -88,7 +88,7 @@ Este es un script de Python que minimiza un autómata finito determinista (DFA) 
 
 La función devuelve una lista de duplas, donde cada dupla representa un caso de prueba y contiene *n, alphabet, final_states y transitions*.
 
-## minimize_dfa() function:
+### minimize_dfa() function:
 
 1.	Toma cuatro argumentos: *n, alphabet, final_states y transitions*, que representan un DFA.
 
@@ -102,14 +102,14 @@ La función devuelve una lista de duplas, donde cada dupla representa un caso de
 
 6.	La función devuelve una lista de pares de estados equivalentes.
 
-## main() function:
+### main() function:
 
 1.	Llama a  read_input() para leer la entrada y almacenarla en los casos.
 2.	Itera sobre cada caso de prueba en los casos y llama a minimize_dfa() para minimizar el DFA.
 3.	Almacena los resultados en una lista  results.
 4.	Imprime cada resultado, que es una cadena que representa los pares equivalentes de estados.
 
-## Bloque if __name__ == "__main__"::
+### Bloque if __name__ == "__main__"::
  Este bloque asegura que main() se ejecute solo cuando el script se ejecuta directamente, y no cuando se importa como módulo.
 
 ## EJECUCIÓN :
@@ -118,6 +118,7 @@ La función devuelve una lista de duplas, donde cada dupla representa un caso de
 2.	Ejecuta el script desde la línea de comandos: python dfa_minimizer.py
 3.	Cuando se ejecuta este script el programa espera a que el usuario ingrese datos describiendo uno o más DFA y tras procesar la entrada, imprime las parejas de estados que son equivalentes según el proceso de minimización del DFA, por ejemplo:
 
+```
 2
 3
 a b
@@ -134,14 +135,15 @@ a b
 2 3 0 1
 3 0 1 2
 
-
+```
 Esta entrada representa dos casos de prueba. El primer caso de prueba tiene 3 estados, alfabeto {a, b}, estados finales {1, 2} y sus transiciones.
 El segundo caso de prueba tiene 4 estados, alfabeto {a, b}, estados finales {2,3} y sus transiciones.
 El script mostrará los pares de estados equivalentes para cada caso de prueba, que en este caso serían:
+```
 (0,2) (0,1}
 (0,1) (2,3)
 
-
+```
 Esta salida indica que los estados 0,2  y 0,1 son equivalentes, en el primer caso de prueba. Del mismo modo, la salida del segundo caso de prueba indicaría que los estados 0,1 son equivalentes, al igual que los estados 2 ,3, lo que significa que podrían ser combinados en el DFA minimizado.
 
 
