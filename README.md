@@ -1,11 +1,19 @@
-Esta es la implementación dada a la Asignación 1 del curso de Lenguajes Formales y Compiladores por parte de los alumnos Samuel Acosta Aristizabal y Katherin Nathalia Allin Murillo.
-
-A continuación podemos ver el contenido de la asignación y sus referencias
-
 # Formal Languages and Compilers
 #### Assignment 1
 
 This repository contains the first assignment for the Formal Languages and Compilers course. The assignment focuses on deterministic finite automata (DFA)
+
+This is the implementation given to Assignment 1 of the Formal Languages and Compilers course by students:
+
+***Samuel Acosta Aristizabal*** and ***Katherin Nathalia Allin Murillo***.
+
+
+
+In this README we are going to show the language used, operating system and how it is executed:
+
+- The language used for this solution was Python and Windows Operating System version 11.
+
+- This is a Python script that minimizes a deterministic finite automaton (DFA) by finding equivalent states. 
 <br>
 
 ## Preliminaries
@@ -63,87 +71,36 @@ single line separated by blank spaces.
 Kozen, Dexter C. (1997). Automata and Computability. 1st. Berlin, Heidelberg: Springer-Verlag.
 ISBN: 0387949070. DOI: https://doi.org/10.1007/978-1-4612-1844-9.
 
-En este Readme vamos a explicar lo que hace el código y cómo se ejecuta este:
-Este es un script de Python que minimiza un autómata finito determinista (DFA) al encontrar estados equivalentes. En este README vamos a hacer un desglose de lo que hace el código y cómo se ejecuta este:
+## How to Run
 
-### read_input() function:
+Before running the script, make sure you have the following prerequisites installed:
 
-1.	Lee la entrada estándar (generalmente la consola) línea por línea.
+1. **Python 3.x**: You can download Python from [python.org](https://www.python.org/downloads/).
+2. **Create the virtual environment in the folder**:
 
-2.	Almacena las líneas de entrada en una lista de líneas.
+   ```sh
+   python -m venv venv
 
-3.	Se espera que la entrada sea en un formato específico:
+3. **Activate the virtual environment**
+   
+      Windows
 
-3.1.	La primera línea contiene un entero c, que representa el número de casos de prueba.
+         ```sh
+            .\venv\Scripts\activate
 
-3.2.	Cada caso de prueba consiste en:
+   
+   macOS/Linux
 
-•	Un número entero *n*, que representa el número de estados en el DFA.
+      ```sh
+         venv/bin/activate
 
-•	Una línea que contiene el alfabeto (una lista de símbolos separados por espacios).
+4. **Install dependencies**
+   
+    ```sh
+   pip install -r requirements.txt
 
-•	Una línea que contiene los estados finales (una lista de enteros separados por espacios).
+5. **Navigate to the project folder and run**
 
-•	*n* líneas, cada una de las cuales contiene una transición (una lista de enteros separados por espacios).
-
-La función devuelve una lista de duplas, donde cada dupla representa un caso de prueba y contiene *n, alphabet, final_states y transitions*.
-
-### minimize_dfa() function:
-
-1.	Toma cuatro argumentos: *n, alphabet, final_states y transitions*, que representan un DFA.
-
-2.	La función minimiza el DFA al encontrar estados equivalentes utilizando los siguientes pasos:
-
-3.	Marca pares de estados donde uno es definitivo y el otro no.
-
-4.	Marca iterativamente los pares de estados en función de sus transiciones.
-
-5.	Recoge los pares de estados equivalentes.
-
-6.	La función devuelve una lista de pares de estados equivalentes.
-
-### main() function:
-
-1.	Llama a  read_input() para leer la entrada y almacenarla en los casos.
-2.	Itera sobre cada caso de prueba en los casos y llama a minimize_dfa() para minimizar el DFA.
-3.	Almacena los resultados en una lista  results.
-4.	Imprime cada resultado, que es una cadena que representa los pares equivalentes de estados.
-
-### Bloque if __name__ == "__main__"::
- Este bloque asegura que main() se ejecute solo cuando el script se ejecuta directamente, y no cuando se importa como módulo.
-
-## EJECUCIÓN :
-
-1.	Guarde el código en un archivo, por ejemplo, dfa_minimizer.py.
-2.	Ejecuta el script desde la línea de comandos: python dfa_minimizer.py
-3.	Cuando se ejecuta este script el programa espera a que el usuario ingrese datos describiendo uno o más DFA y tras procesar la entrada, imprime las parejas de estados que son equivalentes según el proceso de minimización del DFA, por ejemplo:
-
-```
-2
-3
-a b
-1 2
-0 1
-1 2
-0 0
-1 1
-4
-a b
-2 3
-0 1 2 3
-1 2 3 0
-2 3 0 1
-3 0 1 2
-
-```
-Esta entrada representa dos casos de prueba. El primer caso de prueba tiene 3 estados, alfabeto {a, b}, estados finales {1, 2} y sus transiciones.
-El segundo caso de prueba tiene 4 estados, alfabeto {a, b}, estados finales {2,3} y sus transiciones.
-El script mostrará los pares de estados equivalentes para cada caso de prueba, que en este caso serían:
-```
-(0,2) (0,1}
-(0,1) (2,3)
-
-```
-Esta salida indica que los estados 0,2  y 0,1 son equivalentes, en el primer caso de prueba. Del mismo modo, la salida del segundo caso de prueba indicaría que los estados 0,1 son equivalentes, al igual que los estados 2 ,3, lo que significa que podrían ser combinados en el DFA minimizado.
-
+   ```sh
+   python dfa_minimization.py 
 
