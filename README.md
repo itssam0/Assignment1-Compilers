@@ -85,14 +85,13 @@ Before running the script, make sure you have the following prerequisites instal
    
       Windows
 
-         ```sh
-            .\venv\Scripts\activate
+       .\venv\Scripts\activate
 
    
    macOS/Linux
 
       ```sh
-         venv/bin/activate
+      venv/bin/activate
 
 4. **Install dependencies**
    
